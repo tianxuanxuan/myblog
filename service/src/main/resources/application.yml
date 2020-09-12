@@ -1,0 +1,23 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: service-blog # 服务名称
+
+  #  profiles:
+  #    active: dev #环境设置 dev表示构建阶段，test表示测试阶段，prod表示发布阶段
+  datasource: #数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  jackson: #我们的时区是东八区，应该加8个小时，时区显示格式也需要改成我们想要的
+    date-format: yyyy-MM-DD HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  mapper-locations: classpath:com/xgit/boot/mapper/xml/*.xml #配置mapper xml文件的路径
+
+  #mapper-locations: classpath*:mapper/*.xml
+  #type-aliases-package: com.xgit.boot.entity
