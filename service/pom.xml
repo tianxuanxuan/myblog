@@ -12,12 +12,6 @@
     <artifactId>service</artifactId>
 
     <dependencies>
-        <!--spring boot web-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!--自定义common包-->
         <dependency>
             <groupId>com.xgit</groupId>

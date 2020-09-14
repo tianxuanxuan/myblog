@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @author tianxuanxuan
  * @since 2020-09-12
  */
-@Mapper
+
 public interface MBlogMapper extends BaseMapper<MBlog> {
 
 }

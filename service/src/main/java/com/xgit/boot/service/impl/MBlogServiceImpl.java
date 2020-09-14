@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-12
  */
 
-@Service
+@Service("mBlogService")
 public class MBlogServiceImpl extends ServiceImpl<MBlogMapper, MBlog> implements MBlogService {
 
 }

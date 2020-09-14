@@ -2,7 +2,7 @@ package com.xgit.boot.service;
 
 import com.xgit.boot.entity.MUser;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.stereotype.Service;
+
 
 /**
  * <p>

@@ -31,6 +31,5 @@ public class MUserController {
         List<MUser> result = mUserService.list();
         return CommonResult.ok().data("all", result);
     }
-
 }
 

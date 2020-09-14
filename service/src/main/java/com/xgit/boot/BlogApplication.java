@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@MapperScan("com.xgit.boot.mapper") //这里是个坑，如果不加mapperscan，bean初始化会加载不到mapper
+@MapperScan("com.xgit.boot.**.mapper") //这里是个坑，如果不加mapperscan，bean初始化会加载不到mapper
 public class BlogApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);

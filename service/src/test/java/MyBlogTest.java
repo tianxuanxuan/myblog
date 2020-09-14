@@ -20,14 +20,14 @@ import javax.annotation.Resource;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BlogApplication.class)
 public class MyBlogTest {
-    @Resource
+    @Autowired
     private MUserMapper mUserMapper;
 
-    @Resource
+    @Autowired
     private MBlogMapper mBlogMapper;
 
-    @Resource
-    private MUserServiceImpl mUserServiceImpl;
+    @Autowired
+    private MUserService mUserService;
 
 
     @Test
@@ -45,6 +45,6 @@ public class MyBlogTest {
     @Test
     public void testUserService(){
         System.out.println("---- select userService -----");
-        System.out.println(mUserServiceImpl.list());
+        System.out.println(mUserService.list());
     }
 }

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-12
  */
 
-@Service
+@Service("mUserService")
 public class MUserServiceImpl extends ServiceImpl<MUserMapper, MUser> implements MUserService {
 
 }
