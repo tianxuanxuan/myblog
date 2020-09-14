@@ -21,3 +21,8 @@ mybatis-plus:
 
   #mapper-locations: classpath*:mapper/*.xml
   #type-aliases-package: com.xgit.boot.entity
+
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379

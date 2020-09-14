@@ -39,7 +39,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("gulischool 接口 API 文档")
                 .description("展示先做基础功能，后面再添加业务")
-                .termsOfServiceUrl("https://www.yzpnb.com/aa/")
+                .termsOfServiceUrl("http://xcmg-xgxx.xyz")
                 .version("1.0")
                 .contact(new Contact("tianxuanxuan","http://xcmg-xgxx.xyz",
                         "xx_tian189@163.com"))

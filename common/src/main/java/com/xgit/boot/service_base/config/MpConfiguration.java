@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * On 2020-09-12 14:44
  */
 @Configuration
-@MapperScan("com.xgit.boot")
+@MapperScan("com.xgit.boot.**.mapper")
 public class MpConfiguration {
     //分页插件
     @Bean

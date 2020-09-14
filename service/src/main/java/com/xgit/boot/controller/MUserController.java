@@ -3,12 +3,11 @@ package com.xgit.boot.controller;
 
 import com.xgit.boot.common_utils.CommonResult;
 import com.xgit.boot.entity.MUser;
-import com.xgit.boot.service.impl.MUserServiceImpl;
+import com.xgit.boot.service.MUserService;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,12 +23,18 @@ import java.util.List;
 @RequestMapping("/service-blog/m-user")
 public class MUserController {
     @Autowired
-    private MUserServiceImpl mUserService;
+    private MUserService mUserService;
 
+    @RequiresAuthentication
     @GetMapping("selectAll")
     public CommonResult getAll(){
         List<MUser> result = mUserService.list();
         return CommonResult.ok().data("all", result);
+    }
+
+    @PostMapping("login")
+    public CommonResult login(@Validated @RequestBody MUser mUser){
+        return CommonResult.ok().data("user", mUser);
     }
 }
 

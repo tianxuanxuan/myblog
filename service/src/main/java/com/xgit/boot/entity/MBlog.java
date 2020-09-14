@@ -1,9 +1,14 @@
 package com.xgit.boot.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -12,7 +17,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author tianxuanxuan
@@ -42,17 +47,21 @@ public class MBlog implements Serializable {
     @ApiModelProperty(value = "内容")
     private String content;
 
+    //添加自动填充注解
+    @TableField(fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @ApiModelProperty(value = "创建时间")
-    private Date gmtCreate;
+    private Date gmtCreated;
 
     @ApiModelProperty(value = "发布状态")
     private Integer status;
 
+    //添加自动填充注解
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @ApiModelProperty(value = "修改时间")
     private Date gmtModified;
 
     @ApiModelProperty(value = "逻辑删除1删除，0未删除")
     private Boolean isDelete;
-
-
 }

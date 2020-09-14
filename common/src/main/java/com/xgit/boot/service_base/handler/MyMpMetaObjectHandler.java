@@ -14,13 +14,13 @@ import java.util.Date;
 public class MyMpMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
-        /*注意这里的监听字段gmtCreate和gmtModified是java属性名，不是字段名*/
-        this.setFieldValByName("gmtCreated",new Date(),metaObject);
-        this.setFieldValByName("gmtModified",new Date(),metaObject);
+        /*注意这里的监听字段gmtCreated和gmtModified是java属性名，不是字段名*/
+        this.setFieldValByName("gmtCreated", new Date(), metaObject);
+        this.setFieldValByName("gmtModified", new Date(), metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.setFieldValByName("gmtModified",new Date(),metaObject);
+        this.setFieldValByName("gmtModified", new Date(), metaObject);
     }
 }
