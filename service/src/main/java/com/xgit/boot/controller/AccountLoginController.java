@@ -39,9 +39,9 @@ public class AccountLoginController {
     @CrossOrigin
     @PostMapping("/login")
     public CommonResult login(@Validated @RequestBody LoginMD loginMD, HttpServletResponse response){
-        MUser user = mUserService.getOne(new QueryWrapper<MUser>().eq("username", loginMD.getUserName()));
+        MUser user = mUserService.getOne(new QueryWrapper<MUser>().eq("username", loginMD.getUsername()));
         Assert.notNull(user, "用户不存在");
-        if(!user.getPassword().equals(SecureUtil.md5(loginMD.getPassWord()))){
+        if(!user.getPassword().equals(SecureUtil.md5(loginMD.getPassword()))){
             return CommonResult.error().message("密码错误");
         }
         String jwt = jwtUtils.generateToken(user.getId());
