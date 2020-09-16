@@ -11,6 +11,9 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 public class InsertBlogMD {
+    @ApiModelProperty(value = "博客id")
+    private String id;
+
     @ApiModelProperty(value = "用户id")
     private String userId;
 

@@ -19,6 +19,9 @@ public class JwtUtils {
      * JwtUtils是个生成和校验jwt的工具类，其中有些jwt相关的密钥信息是从项目配置文件中配置的
      */
     private final String secret = "f4e2e52034348f86b67cde581c0f9eb5";
+    /**
+     * token有效时长7天，单位秒
+     */
     private final long expire = 604800L;
     private final String header = "token";
 
