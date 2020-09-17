@@ -55,4 +55,19 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <!--mvn clean package -Dmaven.test.skip=true打包命令-->
+    <build>
+        <finalName>MyBlog</finalName><!--打完包的名字-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier><!--打包为可执行的-->
+                    <mainClass>com.xgit.boot.BlogApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

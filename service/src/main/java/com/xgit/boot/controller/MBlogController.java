@@ -2,6 +2,7 @@ package com.xgit.boot.controller;
 
 
 import cn.hutool.core.lang.Assert;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xgit.boot.common_utils.CommonResult;
 import com.xgit.boot.entity.MBlog;
@@ -73,6 +74,7 @@ public class MBlogController {
         mBlog.setContent(blog.getContent());
         mBlog.setTitle(blog.getTitle());
         mBlog.setDescription(blog.getDescription());
+        mBlog.setStatus(blog.getStatus());
         boolean updateResult = mBlogService.updateById(mBlog);
         if (updateResult){
             return CommonResult.ok().message("更新成功");
@@ -86,8 +88,10 @@ public class MBlogController {
                                     @PathVariable("current") Long current,
                                     @ApiParam(name = "size", value = "每页记录数")
                                     @PathVariable("size") Long size) {
+        QueryWrapper<MBlog> queryWrapper = new QueryWrapper<MBlog>();
+        queryWrapper.orderByDesc("gmt_modified");
         Page<MBlog> page = new Page<>(current, size);
-        return CommonResult.ok().data("limitBlog", mBlogService.page(page));
+        return CommonResult.ok().data("limitBlog", mBlogService.page(page,queryWrapper));
     }
 }
 

@@ -83,6 +83,7 @@ public class AccountLoginController {
         mUser.setPassword(SecureUtil.md5(signInMD.getPassword())); //加密密码
         mUser.setStatus(1); //初始状态1，表示正常
         mUser.setIsDelete(false); //初始状态0，表示未删除
+        mUser.setAvatar("https://image-1300566513.cos.ap-guangzhou.myqcloud.com/upload/images/5a9f48118166308daba8b6da7e466aab.jpg"); //头像先给个默认值
         boolean saveResult = mUserService.save(mUser);
         if (saveResult) {
             return CommonResult.ok();

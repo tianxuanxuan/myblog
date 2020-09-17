@@ -9,9 +9,9 @@ spring:
   #    active: dev #环境设置 dev表示构建阶段，test表示测试阶段，prod表示发布阶段
   datasource: #数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
-    username: root
-    password: 123456
+    url: jdbc:mysql://115.29.178.137:3306/myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: tianxx
+    password: 123456@Txx
   jackson: #我们的时区是东八区，应该加8个小时，时区显示格式也需要改成我们想要的
     date-format: yyyy-MM-DD HH:mm:ss
     time-zone: GMT+8
